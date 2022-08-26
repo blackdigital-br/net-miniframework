@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,32 +14,31 @@ namespace BlackDigital.Data
         private const string UpdatedColumnName = "updated_at";
         private const string DeletedColumnName = "deleted_at";
 
-        public static void AddCreatedColumn<TEntity>(this ModelBuilder modelBuilder)
+        public static void AddCreatedColumn<TEntity>(this EntityTypeBuilder<TEntity> entity)
             where TEntity : BaseCreated
         {
-            modelBuilder.Entity<TEntity>().Property(s => s.Created)
-                                          .HasColumnName(CreatedColumnName)
-                                          .IsRequired();
+            entity.Property(s => s.Created)
+                  .HasColumnName(CreatedColumnName)
+                  .IsRequired();
         }
 
-        public static void AddUpdatedColumn<TEntity>(this ModelBuilder modelBuilder)
+        public static void AddUpdatedColumn<TEntity>(this EntityTypeBuilder<TEntity> entity)
             where TEntity : BaseUpdated
         {
-            AddCreatedColumn<TEntity>(modelBuilder);
+            AddCreatedColumn(entity);
 
-            modelBuilder.Entity<TEntity>().Property(s => s.Updated)
-                                          .HasColumnName(UpdatedColumnName)
-                                          .IsRequired();
+            entity.Property(s => s.Updated)
+                  .HasColumnName(UpdatedColumnName)
+                  .IsRequired();
         }
 
-        public static void AddDeletedColumn<TEntity>(this ModelBuilder modelBuilder)
+        public static void AddDeletedColumn<TEntity>(this EntityTypeBuilder<TEntity> entity)
             where TEntity : BaseDeleted
         {
-            AddUpdatedColumn<TEntity>(modelBuilder);
+            AddUpdatedColumn(entity);
 
-            modelBuilder.Entity<TEntity>().Property(s => s.Deleted)
-                                          .HasColumnName(DeletedColumnName)
-                                          .IsRequired();
+            entity.Property(s => s.Deleted)
+                  .HasColumnName(DeletedColumnName);
         }
     }
 }
