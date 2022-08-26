@@ -14,7 +14,6 @@ namespace BlackDigital.Data
             Created = DateTime.UtcNow;
         }
 
-        [Column("created_at")]
         public DateTime Created { get; set; }
     }
 }
