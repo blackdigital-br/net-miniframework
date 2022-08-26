@@ -11,7 +11,7 @@ namespace BlackDigital.Data
         public static ICollection<ItemA> UpdateAllByList<ItemA, ItemB>(this ICollection<ItemA> currentList,
                                             ICollection<ItemB> newList,
                                             Func<ItemA, ItemB, bool> compare,
-                                            Func<ItemA, ItemB, ItemA> updateData = null)
+                                            Func<ItemA, ItemB, ItemA>? updateData = null)
             where ItemA : class, new()
             where ItemB : class, new()
         {
@@ -46,7 +46,7 @@ namespace BlackDigital.Data
         public static ICollection<ItemA> UpdateDataByList<ItemA, ItemB>(this ICollection<ItemA> currentList,
                                             ICollection<ItemB> newList,
                                             Func<ItemA, ItemB, bool> compare,
-                                            Func<ItemA, ItemB, ItemA> updateData = null)
+                                            Func<ItemA, ItemB, ItemA>? updateData = null)
             where ItemA : class, new()
             where ItemB : class, new()
         {
@@ -70,7 +70,7 @@ namespace BlackDigital.Data
         public static ICollection<ItemA> AddByList<ItemA, ItemB>(this ICollection<ItemA> currentList,
                                             ICollection<ItemB> newList,
                                             Func<ItemA, ItemB, bool> compare,
-                                            Func<ItemA, ItemB, ItemA> updateData = null)
+                                            Func<ItemA, ItemB, ItemA>? updateData = null)
             where ItemA : class, new()
             where ItemB : class, new()
         {
