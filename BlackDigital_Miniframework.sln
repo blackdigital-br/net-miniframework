@@ -5,6 +5,10 @@ VisualStudioVersion = 17.3.32819.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDigital.Data", "BlackDigital.Data\BlackDigital.Data.csproj", "{2E9BFAEB-9CF9-4549-AB8F-1BB9662BCF03}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{081C879F-9353-482D-B83D-F9C665504289}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlackDigital.Data.Test", "Tests\BlackDigital.Data.Tests\BlackDigital.Data.Test.csproj", "{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{2E9BFAEB-9CF9-4549-AB8F-1BB9662BCF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E9BFAEB-9CF9-4549-AB8F-1BB9662BCF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E9BFAEB-9CF9-4549-AB8F-1BB9662BCF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CDBF9BA3-5914-47D2-A897-C82C9EDE7C56} = {081C879F-9353-482D-B83D-F9C665504289}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {99FD54AC-05D3-4F41-B12A-C8395CA129ED}
